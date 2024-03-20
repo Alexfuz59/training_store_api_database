@@ -23,7 +23,6 @@ db_name = 'training_store'
 
 @pytest.fixture()
 def cursor(request):
-    print('SSH_KEY')
     EnvironmentAllure.create_environment()
     with SSHTunnelForwarder(
             (ssh_host, ssh_port),
