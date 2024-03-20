@@ -1,0 +1,3 @@
+{
+    "message": "code=400, message=Unmarshal type error: expected=float32, got=array, field=total_price, offset=46, internal=json: cannot unmarshal array into Go struct field PutOrder.total_price of type float32"
+}
