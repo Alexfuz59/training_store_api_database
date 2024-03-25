@@ -94,18 +94,20 @@ jobs:
 
       - name: Send message to bot(success)
         if: ${{ needs.test.outputs.tests_passed == 'true' }}
+        env:
+          CHAT_IDS: ${{ secrets.CHAT_IDS }}
         run: |
           IFS=',' read -ra CHAT_IDS <<< "$CHAT_ID"
           for id in "${CHAT_IDS[@]}"; do
             curl --location 'https://api.telegram.org/bot${{ secrets.TOKEN_TG }}/sendMessage' --header 'Content-Type: application/json' --data '{"chat_id": $id,"text": " \u2705 Tests PASSED. Report: https://alexfuz59.github.io/training_store_api_database/"}'
-        env:
-          CHAT_IDS: ${{ secrets.CHAT_IDS }}
+          done
         
       - name: Send message to bot(failure)
         if: ${{ needs.test.outputs.tests_passed != 'true' }}
+        env:
+          CHAT_IDS: ${{ secrets.CHAT_IDS }}
         run: |
           IFS=',' read -ra CHAT_IDS <<< "$CHAT_ID"
           for id in "${CHAT_IDS[@]}"; do
             curl --location 'https://api.telegram.org/bot${{ secrets.TOKEN_TG }}/sendMessage' --header 'Content-Type: application/json' --data '{"chat_id": $id,"text": " \u26a0\ufe0f Tests FAILED. Report: https://alexfuz59.github.io/training_store_api_database/"}'
-        env:
-          CHAT_IDS: ${{ secrets.CHAT_IDS }}
+          done
