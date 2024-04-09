@@ -1,0 +1,20 @@
+[
+    {
+        "id": 664,
+        "payment_key": "cs_test_a1GodS6yj6BddiLHpN7J4b0OnWAruhtoTIxWT9ygc1zMS153WWWmjimyzA",
+        "status": "created",
+        "total_price": 9.99
+    },
+    {
+        "id": 665,
+        "payment_key": "cs_test_a1B4VFwlYnTGEbyZdakxv2pPLxYN8iH9Yz0TD0IRDSlcjv6IVT0Ajk8p07",
+        "status": "created",
+        "total_price": 15.99
+    },
+    {
+        "id": 666,
+        "payment_key": "cs_test_a1WSPhvimpMVIDEVzP51e1QJdJL4ulUnhWi8y2iirtRjAupNbP6R2VFU0l",
+        "status": "created",
+        "total_price": 124
+    }
+]
