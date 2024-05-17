@@ -17,7 +17,7 @@ class CreateOrder(BaseAPI):
     @allure.step('Create order')
     def create_order(self):
         self.response = requests.post(
-            url=self.url.CREATE_ORDER ,
+            url=self.url.CREATE_ORDER,
             json=self.payload.order_data()
         )
         self.response_json = self.response.json()
